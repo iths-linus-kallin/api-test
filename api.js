@@ -16,15 +16,13 @@ async function render(){
         newItem.classList.remove("prototype")
         newItem.classList.add("characters")
         
-        
-        
         newItem.addEventListener("click", function(){
             let photo = document.querySelector(".photo")
             let name = document.querySelector(".name")
-            let gameSeries = document.querySelector(".gameSeries")
+            let game = document.querySelector(".game")
             photo.src = item.image
             name.innerHTML = item.name
-            gameSeries.innerHTML = item.gameSeries
+            game.innerHTML = item.gameSeries
         })
     newItem.innerText = item.name
     ul.append(newItem)

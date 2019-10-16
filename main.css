@@ -53,6 +53,7 @@ h1{
     cursor: pointer;
     list-style-type: none;
     color: rgb(185, 0, 0);
+
 }
 
 .characters{
@@ -71,23 +72,42 @@ h1{
 }
 
 .rightfield{
-    position: sticky;
-    top: 0px;
     padding-top: 30px;
     width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(255, 195, 195);
+    background-color: rgb(245, 195, 195);
+}
+
+.sticky{
+    position: sticky;
+    top: 165px;
+    /* width: 200px; */
+    align-self: auto;
+    height: auto;
 }
 
 .photo{
-    position: sticky;
+    /* position: sticky;
+    top: 135px;
+    align-self: auto; */
     margin-top: 20px;
     width: 150px;
     height: auto;
 }
 
 .title{
+    margin-bottom: 10px;
+}
+
+.name{
     font-weight: bold;
+    margin-bottom: 40px;
+    margin-top: 0px;
+}
+
+.game{
+    font-weight: bold;
+    margin-bottom: 10px;
 }
