@@ -15,6 +15,9 @@ async function render(){
         let newItem = itemPrototype.cloneNode(true)
         newItem.classList.remove("prototype")
         newItem.classList.add("characters")
+        
+        
+        
         newItem.addEventListener("click", function(){
             let photo = document.querySelector(".photo")
             let name = document.querySelector(".name")
