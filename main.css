@@ -1,4 +1,39 @@
+html{
+    margin: 0px;
+    padding: 0px;
+}
+
 body{
+    margin: 0px;
+    padding: 0px;
+}
+
+p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    background-image: url(https://futurefive.co.nz/uploads/story/2019/06/13/Hero_image.jpg);
+    background-color: rgb(126, 0, 0);
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+}
+
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: antiquewhite;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0px;
+}
+
+.main{
     background-color: antiquewhite;
     display: flex;
     flex-direction: row;
@@ -11,16 +46,25 @@ body{
     list-style-type: none;
 }
 
-p{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.characters:hover{
+    cursor: pointer;
     list-style-type: none;
+    color: rgb(185, 0, 0);
 }
 
-.wrapper{
+.characters{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style-type: none;
+    margin-top: 15px;
+}
+
+.leftfield{
+    padding-top: 30px;
     width: 50vw;
 }
 
-article{
+.rightfield{
+    padding-top: 30px;
     width: 50vw;
     display: flex;
     flex-direction: column;
@@ -29,7 +73,12 @@ article{
 }
 
 .photo{
+    position: sticky;
     margin-top: 20px;
-    width: 20vw;
+    width: 150px;
     height: auto;
+}
+
+.title{
+    font-weight: bold;
 }
