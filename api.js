@@ -11,22 +11,27 @@ async function render(){
     data = list
     let ul = document.querySelector("ul")
     let itemPrototype = document.querySelector("li.prototype")
+    let photo = document.querySelector(".photo")
+    let name = document.querySelector(".name")
+    let game = document.querySelector(".game")
+    photo.src = list[0].image
+    name.innerHTML = list[0].name
+    game.innerHTML = list[0].gameSeries
+
     for(let item of list){
         let newItem = itemPrototype.cloneNode(true)
         newItem.classList.remove("prototype")
         newItem.classList.add("characters")
-        
         newItem.addEventListener("click", function(){
-            let photo = document.querySelector(".photo")
-            let name = document.querySelector(".name")
-            let game = document.querySelector(".game")
             photo.src = item.image
             name.innerHTML = item.name
             game.innerHTML = item.gameSeries
         })
+
     newItem.innerText = item.name
     ul.append(newItem)
     }
 }
+
 
 render()
