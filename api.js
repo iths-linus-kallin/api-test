@@ -33,5 +33,49 @@ async function render(){
     }
 }
 
+function search(){
+    var input = document.querySelector("input");
+
+    input.addEventListener("keyup", event =>{
+        if (event.key=="Enter") 
+        
+        // input.innerText = input.value.toLowerCase();
+    
+        var matchingNames = [];
+    
+        for(item of data){
+            if(item.startsWith(input.value.toLowerCase())){
+                matchingNames.push(item);
+            }
+        }
+
+        let listItems = document.querySelectorAll(".characters")
+        for(let li of listItems){
+            li.remove()
+        }
+
+        for(let i=0; i<matchingColors.length; i++){
+            let list = document.createElement("li");
+            list.innerText = matchingNames[i]
+            var dropdown = document.querySelector("ul");
+                if(input.value != ""){
+                    ul.append(list);
+                }
+        }
+        
+        document.addEventListener("keypress", autofill =>{
+            if (autofill.key=="Enter"){
+                input.value = matchingNames[0];
+            }
+        }) 
+
+    })
+
+    document.querySelectorAll(".characters").onclick = function (){
+        input.value = list.value;
+    }
+}
+
+search();
 
 render()
