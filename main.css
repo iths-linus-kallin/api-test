@@ -178,12 +178,15 @@ ul{
 .photowrapper{
     width: 150px;
     height: 300px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .photo{
     margin-top: 20px;
     width: 150px;
     height: auto;
+    margin-bottom: 20px;
 }
 
 .title{
