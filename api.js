@@ -35,39 +35,41 @@ async function render(){
 
 function search(){
     var input = document.querySelector("input");
+    let list = getData()
+    data = list
 
     input.addEventListener("keyup", event =>{
-        if (event.key=="Enter") 
+        if (event.key=="Enter")
         
-        // input.innerText = input.value.toLowerCase();
-    
-        var matchingNames = [];
-    
-        for(item of data){
-            if(item.startsWith(input.value.toLowerCase())){
-                matchingNames.push(item);
-            }
-        }
-
-        let listItems = document.querySelectorAll(".characters")
-        for(let li of listItems){
-            li.remove()
-        }
-
-        for(let i=0; i<matchingColors.length; i++){
-            let list = document.createElement("li");
-            list.innerText = matchingNames[i]
-            var dropdown = document.querySelector("ul");
-                if(input.value != ""){
-                    ul.append(list);
+            input.innerText = input.value;
+        
+            var matchingNames = [];
+        
+            for(let item of data){
+                if(item.startsWith(input.value)){
+                    matchingNames.push(item);
                 }
-        }
-        
-        document.addEventListener("keypress", autofill =>{
-            if (autofill.key=="Enter"){
-                input.value = matchingNames[0];
             }
-        }) 
+
+            let listItems = document.querySelectorAll(".characters")
+            for(let li of listItems){
+                li.remove()
+            }
+
+            for(let i=0; i<matchingColors.length; i++){
+                let list = document.createElement("li");
+                list.innerText = matchingNames[i]
+                var ul = document.querySelector("ul");
+                    if(input.value != ""){
+                        ul.append(list);
+                    }
+            }
+            
+            document.addEventListener("keypress", autofill =>{
+                if (autofill.key=="Enter"){
+                    input.value = matchingNames[0];
+                }
+            }) 
 
     })
 
@@ -76,6 +78,5 @@ function search(){
     }
 }
 
-search();
-
 render()
+search()
