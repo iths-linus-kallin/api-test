@@ -58,8 +58,8 @@ async function search(){
             li.remove()
         }
 
-        for(item of matchingNames){
-            let list = document.createElement("li")
+        for(let item of matchingNames){
+            var list = document.createElement("li")
             list.innerText = matchingNames[item]
             list.classList.add("characters")
             ul.append(list)
