@@ -33,47 +33,47 @@ async function render(){
     }
 }
 
-function search(){
+// SÖKFUNKTION
+
+async function search(){
     var input = document.querySelector("input");
-    let list = getData()
+    let list = await getData()
     data = list
 
     input.addEventListener("keyup", event =>{
-        if (event.key=="Enter")
         
-            input.innerText = input.value;
-        
-            var matchingNames = [];
-        
-            for(let item of data){
-                if(item.startsWith(input.value)){
-                    matchingNames.push(item);
-                }
-            }
+        let characters = document.querySelectorAll(".characters")
+        var matchingNames = []
+        let ul = document.querySelector("ul")
 
-            let listItems = document.querySelectorAll(".characters")
-            for(let li of listItems){
-                li.remove()
+        for(let item of data){
+            if (item.name.startsWith(input.value)){
+                matchingNames.push(item.name)
+            }else{
+                item++
             }
+        }
 
-            for(let i=0; i<matchingColors.length; i++){
-                let list = document.createElement("li");
-                list.innerText = matchingNames[i]
-                var ul = document.querySelector("ul");
-                    if(input.value != ""){
-                        ul.append(list);
-                    }
-            }
-            
-            document.addEventListener("keypress", autofill =>{
-                if (autofill.key=="Enter"){
-                    input.value = matchingNames[0];
-                }
-            }) 
+        for(let li of characters){
+            li.remove()
+        }
+
+        for(item of matchingNames){
+            let list = document.createElement("li")
+            list.innerText = matchingNames[item]
+            list.classList.add("characters")
+            ul.append(list)
+        }
 
     })
 
-    document.querySelectorAll(".characters").onclick = function (){
+    document.addEventListener("keypress", event=>{
+        if(event=="Enter"){
+            input.value = matchingNames[0]
+        }
+    })
+
+    document.querySelectorAll(".characters").onclick = function(){
         input.value = list.value;
     }
 }

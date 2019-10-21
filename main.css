@@ -1,4 +1,5 @@
 html{
+    height: 100%;
     margin: 0px;
     padding: 0px;
 }
@@ -123,6 +124,7 @@ h1{
     align-items: center;
     flex-direction: column;
     width: 50vw;
+    height: 100vw;
     background-color: rgb(253, 255, 217);
     padding-bottom: 50px;
 }
